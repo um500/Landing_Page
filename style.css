@@ -185,104 +185,174 @@ body{
     }
 }
 
-  
+/* Section styling */
 .section-p1 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 50px;
-    background-color: #f5f5f5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  background-color: #f5f5f5;
+  flex-direction: row; /* Ensures horizontal layout for larger screens */
+  flex-wrap: wrap;
 }
 
+/* Left side styling */
 .left-side {
-    flex: 1;
-    position: relative;
-    padding: 20px;
-}
-p{
-    color: #000;
+  flex: 1;
+  position: relative;
+  padding: 20px;
 }
 
-.right-side {
-    flex: 1;
-    text-align: center;
-}
-
+/* Blur image styling */
 .left-blur {
-    position: absolute;
-    left: 30%;
-    z-index: 1;
-    width: 400px; /* Adjust this value to control the width */
-    height: 400px; 
-    margin-top: -25%;/* Adjust this value to control the height */
-    background: transparent;
+  position: absolute;
+  left: 30%;
+  z-index: 1;
+  width: 400px;
+  height: 400px; 
+  margin-top: -25%;
+  background: transparent;
 }
 
-
+/* Strap image styling */
 .left-strap {
-    position: absolute;
-    left: 0;
-    bottom: 1px; 
-    width: 75%; 
-    z-index: 1;
-    margin-bottom: -50%;
-    background: transparent;
+  position: absolute;
+  left: 0;
+  bottom: 1px; 
+  width: 75%; 
+  z-index: 1;
+  margin-bottom: -50%;
+  background: transparent;
 }
 
+/* Left side heading styling */
 .left-side h1 {
-    font-size: 5.5rem;
-    margin-bottom: 5px;
-    line-height: -25%;
-    margin-top: 20%;
-    font-family: ClashDisplay;
-    text-transform: capitalize;
-    font-weight: bold;
-    word-spacing: 4px;
+  font-size: 5.5rem;
+  margin-bottom: 5px;
+  line-height: -25%;
+  margin-top: 20%;
+  font-family: ClashDisplay;
+  text-transform: capitalize;
+  font-weight: bold;
+  word-spacing: 4px;
 }
 
+/* Left side paragraph styling */
 .left-side p {
-    font-size: 1.4em;
-    margin-bottom: 30px;
-    color: #000000;
-    font-family: ClashDisplay;
-    text-transform: capitalize;
+  font-size: 1.4em;
+  margin-bottom: 30px;
+  color: #000000;
+  font-family: ClashDisplay;
+  text-transform: capitalize;
 }
+
+/* Button styling */
 button {
-    margin-right: 10px;
-    padding: 10px 20px;
-    font-size: 1.5em;
-    cursor: pointer;
-    font-family: ClashDisplay;
-    text-transform: capitalize;
-    transition: background-color 0.3s ease; /* Added transition for smooth effect */
+  margin-right: 10px;
+  padding: 10px 20px;
+  font-size: 1.5em;
+  cursor: pointer;
+  font-family: ClashDisplay;
+  text-transform: capitalize;
+  transition: background-color 0.3s ease;
 }
 
+/* White button styling */
 button.white-btn {
-    background-color: #000000;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
 }
 
+/* Normal button styling */
 button.normal-btn {
-    background-color: #ffffff;
-    color: #000000;
-    border: none;
-    border-radius: 5px;
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
 }
 
+/* Normal button hover effect */
 button.normal-btn:hover {
-    background-color: #FF5555;
+  background-color: #FF5555;
 }
 
+/* Icon margin adjustment */
 button i {
-    margin-left: 5px;
+  margin-left: 5px;
 }
 
+/* Right side styling */
+.right-side {
+  flex: 1;
+  text-align: center;
+}
 
+/* Right side image styling */
 .right-side img {
-    max-width: 100%;
+  max-width: 100%;
+  height: auto;
+  filter: grayscale(50%); /* Example filter: 50% grayscale */
+  transition: transform 0.3s ease; /* Add transition for scale effect */
+}
+
+/* Right side image hover effect */
+.right-side img:hover {
+  transform: scale(1.05); /* Scale effect on hover */
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+  .section-p1 {
+    flex-direction: column; /* Stacks items vertically */
+    padding: 20px;
+  }
+
+  .left-side, .right-side {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .left-side {
+    order: 1; /* Moves text to the top */
+    text-align: center;
+  }
+
+  .right-side {
+    order: 2; /* Moves image to the middle */
+  }
+  .left-blur {
+    position: relative;
+    left: auto;
+    margin: 20px auto;
+    width: 100%;
     height: auto;
+    filter: blur(10px); /* Apply blur effect */
+  }
+  
+
+  .left-strap {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    margin: 20px auto;
+    width: 100%;
+    height: auto;
+  }
+
+  .left-side h1 {
+    font-size: 3rem; /* Adjust font size for smaller screens */
+    margin-top: 10%;
+  }
+
+  .left-side p {
+    font-size: 1.2em; /* Adjust font size for smaller screens */
+  }
+
+  button {
+    font-size: 1.2em; /* Adjust button size */
+  }
 }
 
 .section-p1 {
@@ -306,6 +376,9 @@ button i {
     height: auto; 
     max-width: 100%; /* Optional: Maximum width */
     max-height: 100%; /* Optional: Maximum height */
+}
+.feature-left-img:hover{
+  transform: scale(1.5);
 }
 
 .feature-right {
@@ -386,83 +459,137 @@ h1 {
     margin-right: 10px;
 }
 
-
-#main-section{
-    position: relative;
-    margin-top: 1%;
-    padding-inline: 5%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    flex-wrap: nowrap;
-    
+/* Base styles for larger screens */
+#main-section {
+  position: relative;
+  margin-top: 1%;
+  padding-inline: 5%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
 }
+
+#main-section .left-main-section {
+  width: 60%;
+}
+
 #main-section .right-main-section {
-    width: 100%;
-    position: relative;
-    height: auto;
+  width: 40%;
+  position: relative;
+  height: auto;
 }
 
-#main-section .right-main-section img{
-width: 100%;
-}
-#main-section .left-main-section{
-    width: 60%;
-}
-#main-section .main-top-heading{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    left: 0;
-    position: relative;
-}
-#main-section h4{
-    text-transform: uppercase;
-    font-size: 18px;
-    color: #FF5555;
-    font-weight: 500;
-    letter-spacing: 2.88px;
-    font-style: normal;
-}
-#main-section h1{
-    margin-top: 6px;
-    color: #000;
-    font-size: 48px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 48px; 
-    text-transform: capitalize;
-}
-#main-section h2{
-    margin-top: 6px;
-    color: #000;
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 40px; 
-    text-transform: capitalize;
-}
-#main-section i{
-    margin-right: 15px;
-    color: #fff;
-    background-color: #FF5555;
-    padding-inline: 14px;
-    padding-block: 12px;
-    border-radius: 100%;
-}
-#main-section p{
-width: 90%;
-color: #000000;
-font-family: ClashDisplay;
-font-size: 18px;
-font-style: normal;
-font-weight: 500;
-line-height: 28px; 
-opacity: 0.5;
-text-transform: capitalize;
+#main-section .right-main-section img {
+  width: 100%;
+  filter: grayscale(50%); /* Example filter: 50% grayscale */
+  transition: filter 0.3s ease, transform 0.3s ease; /* Smooth transition */
 }
 
-#mid-section{
+#main-section .right-main-section img:hover {
+  filter: none; /* Remove filter on hover */
+  transform: scale(1.5); /* Slight zoom effect on hover */
+}
+
+#main-section .main-top-heading {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  position: relative;
+}
+
+#main-section h4 {
+  text-transform: uppercase;
+  font-size: 18px;
+  color: #FF5555;
+  font-weight: 500;
+  letter-spacing: 2.88px;
+  font-style: normal;
+}
+
+#main-section h1 {
+  margin-top: 6px;
+  color: #000;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 48px;
+  text-transform: capitalize;
+}
+
+#main-section h2 {
+  margin-top: 6px;
+  color: #000;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 40px;
+  text-transform: capitalize;
+}
+
+#main-section i {
+  margin-right: 15px;
+  color: #fff;
+  background-color: #FF5555;
+  padding-inline: 14px;
+  padding-block: 12px;
+  border-radius: 100%;
+}
+
+#main-section p {
+  width: 90%;
+  color: #000000;
+  font-family: ClashDisplay;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px;
+  opacity: 0.5;
+  text-transform: capitalize;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+  #main-section {
+      flex-direction: column;
+      align-items: center;
+      padding-inline: 2%;
+  }
+
+  #main-section .left-main-section,
+  #main-section .right-main-section {
+      width: 100%;
+      padding: 10px 0;
+  }
+
+  #main-section .left-main-section {
+      order: 1; /* Place text on top */
+      text-align: center;
+  }
+
+  #main-section .right-main-section {
+      order: 2; /* Place image at the bottom */
+      text-align: center;
+  }
+
+  #main-section h1 {
+      font-size: 36px; /* Adjust font size for smaller screens */
+      line-height: 42px;
+  }
+
+  #main-section h2 {
+      font-size: 24px; /* Adjust font size for smaller screens */
+      line-height: 28px;
+  }
+
+  #main-section p {
+      font-size: 16px; /* Adjust font size for smaller screens */
+      line-height: 24px;
+  }
+}
+/* Base styles for larger screens */
+#mid-section {
     position: relative;
     margin-top: 1%;
     padding-inline: 5%;
@@ -471,36 +598,43 @@ text-transform: capitalize;
     align-items: center;
     flex-wrap: nowrap;
 }
-#mid-section .left-mid-section{
-    width: 100%;
+
+#mid-section .left-mid-section {
+    width: 40%;
     position: relative;
     height: auto;
 }
-#mid-section .left-mid-section img{
-    width: 100%;
 
+#mid-section .left-mid-section img {
+    width: 100%;
+    filter: grayscale(50%); /* Example filter: 50% grayscale */
+    transition: filter 0.3s ease, transform 0.3s ease; /* Smooth transition */
 }
+
+#mid-section .left-mid-section img:hover {
+    filter: none; /* Remove filter on hover */
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
 #mid-section .right-mid-section {
     width: 60%;
 }
-#mid-section .mid-section-heading{
-      width: 100%;
+
+#mid-section .mid-section-heading {
+    width: 100%;
     display: flex;
     flex-direction: column;
     left: 0;
     position: relative;
 }
 
-
-
-#mid-section .mid-section-heading h2{
-    
+#mid-section .mid-section-heading h2 {
     margin-top: 6px;
     color: #000;
     font-size: 30px;
     font-style: normal;
     font-weight: 700;
-    line-height: 40px; 
+    line-height: 40px;
     text-transform: capitalize;
 }
 
@@ -513,15 +647,50 @@ text-transform: capitalize;
     border-radius: 100%;
 }
 
-#mid-section .mid-section-heading  p{
-width: 90%;
-color: #000;
-font-size: 18px;
-font-style: normal;
-font-weight: 500;
-line-height: 28px; 
-opacity: 0.5;
-text-transform: capitalize;
+#mid-section .mid-section-heading p {
+    width: 90%;
+    color: #000;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px;
+    opacity: 0.5;
+    text-transform: capitalize;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    #mid-section {
+        flex-direction: column;
+        align-items: center;
+        padding-inline: 2%;
+    }
+
+    #mid-section .left-mid-section,
+    #mid-section .right-mid-section {
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    #mid-section .right-mid-section {
+        order: 1; /* Place text on top */
+        text-align: center;
+    }
+
+    #mid-section .left-mid-section {
+        order: 2; /* Place image at the bottom */
+        text-align: center;
+    }
+
+    #mid-section .mid-section-heading h2 {
+        font-size: 24px; /* Adjust font size for smaller screens */
+        line-height: 28px;
+    }
+
+    #mid-section .mid-section-heading p {
+        font-size: 16px; /* Adjust font size for smaller screens */
+        line-height: 24px;
+    }
 }
 
 .testimonial-section {
@@ -683,164 +852,206 @@ text-transform: capitalize;
     width: 50px;
     height: auto;
   }
-  
-  .faq-section {
-    width: 85%;
-    margin-inline: 10%;
-  }
-  
-  .head-faq small {
-    color: #FF5555;
-    font-family: ClashDisplay;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 28px; /* 155.556% */
-    letter-spacing: 2.88px;
-    text-transform: uppercase;
-    margin-bottom: 10%;
-  }
-  
-  .head-faq h1 {
-    width: 450px;
-    margin-top: 1%;
-    color: #000000;
-    font-family: ClashDisplay;
-    font-size: 3.7rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 48px; /* 100% */
-    text-transform: capitalize;
-  }
-  
+/* Base styles for larger screens */
+.faq-section {
+  width: 85%;
+  margin-inline: auto; /* Center the FAQ section */
+}
+
+.head-faq small {
+  color: #FF5555;
+  font-family: ClashDisplay;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: 2.88px;
+  text-transform: uppercase;
+  margin-bottom: 10%;
+}
+
+.head-faq h1 {
+  margin-top: 1%;
+  color: #000000;
+  font-family: ClashDisplay;
+  font-size: 3.7rem;
+  font-weight: 700;
+  line-height: 48px;
+  text-transform: capitalize;
+}
+
+.faq-sub-top,
+.faq-sub-mid {
+  margin-block: 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.faq-color-back,
+.faq-no-back {
+  border-radius: 8px;
+  width: 48%;
+  padding: 15px;
+  transition: transform 0.3s ease; /* Smooth scaling transition */
+}
+
+.faq-color-back:hover,
+.faq-no-back:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Alternating Background Colors */
+.faq-color-back {
+  background-color: #FF5555;
+  color: #ffffff;
+}
+
+.faq-no-back {
+  background-color: #ffffff;
+  color: #000000;
+  opacity: 0.8;
+}
+
+.faq-color-back h1,
+.faq-no-back h1 {
+  font-family: ClashDisplay;
+  font-size: 2em;
+  font-weight: 600;
+  line-height: 28px;
+  text-transform: capitalize;
+}
+
+.faq-color-back p,
+.faq-no-back p {
+  font-family: ClashDisplay;
+  font-size: 1.2em;
+  font-weight: 500;
+  line-height: 28px;
+  text-align: justify;
+  text-transform: capitalize;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
   .faq-sub-top,
   .faq-sub-mid {
-    margin-block: 15px;
-    gap: 60px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-  }
-  
-  .faq-color-back {
-    border-radius: 8px;
-    width: 40%;
-    display: block;
-    background-color: #FF5555;
-    padding: 15px;
-  }
-  
-  .faq-color-back h1 {
-    color: rgb(255, 255, 255);
-    font-family: ClashDisplay;
-    font-size: 2em;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 28px; /* 100% */
-    text-transform: capitalize;
-  }
-  
-  .faq-color-back p {
-    color: rgb(255, 255, 255);
-    text-align: justify;
-    font-family: ClashDisplay;
-    font-size: 1.2em;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 28px; /* 155.556% */
-    text-transform: capitalize;
-  }
-  
-  .faq-no-back {
-    border-radius: 8px;
-    width: 40%;
-    display: block;
-    background-color: transparent;
-    padding: 15px;
-  }
-  
-  .faq-no-back h1 {
-    color: #000000;
-    font-family: ClashDisplay;
-    font-size: 2em;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 28px;
-    text-transform: capitalize;
-  }
-  
-  .faq-no-back p {
-    opacity: 0.5;
-    color: #000000;
-    text-align: justify;
-    font-family: ClashDisplay;
-    font-size: 1.2em;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 28px;
-    text-transform: capitalize;
+      flex-direction: column;
+      gap: 15px;
   }
 
+  .faq-color-back,
+  .faq-no-back {
+      width: 100%;
+  }
+}
+
+
+
+ /* Banner styling */
+.banner {
+  width: 100%;
+  height: 100vh;
+  background-image: url("./img/feature/banner.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  display: flex;
+  flex-direction: column; /* Change flex direction on small screens */
+}
+
+/* Text data styling */
+.textdata {
+  gap: 20px;
+  position: absolute;
+  left: 12%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Text data heading 1 styling */
+.textdata h1 {
+  color: white;
+  font-family: ClashDisplay;
+  font-size: 5em;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.7em;
+  text-transform: capitalize;
+}
+
+/* Text data heading 2 styling */
+.textdata h2 {
+  width: 80%;
+  color: white;
+  font-family: ClashDisplay;
+  font-size: 2em;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.7em;
+  text-transform: capitalize;
+}
+
+/* Button styling */
+.textdata button {
+  border: none;
+  padding-inline: 35px;
+  padding-block: 15px;
+  border-radius: 4px;
+  background: white;
+  color: #000000;
+  font-family: ClashDisplay;
+  font-size: 1.125em; /* Use relative units for font size */
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2em; /* Use relative units for line height */
+  text-transform: capitalize;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+/* Button hover effect */
+.textdata button:hover {
+  background-color: #FF5555;
+  color: rgb(255, 255, 255);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
   .banner {
-    width: 100%;
-    height: 100vh;
-    background-image: url("./img/feature/banner.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    height: auto;
+    flex-direction: column;
+  }
+
+  .textdata {
     position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    margin: 20px;
+    text-align: center;
   }
-  
-  .textdata{
-    gap: 20px;
-    position: absolute;
-    left: 12%;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  
+
   .textdata h1 {
-    color: white;
-    font-family: ClashDisplay;
-    font-size: 5em;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 2.7em;
-    text-transform: capitalize;
+    font-size: 3em;
+    line-height: 1.2em;
   }
-  
+
   .textdata h2 {
-    width: 80%;
-    color: white;
-    font-family: ClashDisplay;
-    font-size: 2em;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1.7em;
-    text-transform: capitalize;
+    font-size: 1.5em;
+    line-height: 1.5em;
+    width: 100%;
   }
-  
+
   .textdata button {
-    border: none;
-    padding-inline: 35px;
-    padding-block: 15px;
-    border-radius: 4px;
-    background: white;
-    color: #000000;
-    font-family: ClashDisplay;
-    font-size: 1.125em; /* Use relative units for font size */
-    font-style: normal;
-    font-weight: 500;
-    line-height: 2em; /* Use relative units for line height */
-    text-transform: capitalize;
-    transition: 0.2s ease;
-    cursor: pointer;
+    font-size: 1em;
+    padding-inline: 20px;
+    padding-block: 10px;
   }
-  
-  .textdata button:hover {
-    background-color: #FF5555;
-    color: rgb(255, 255, 255);
-  }
+}
+
 
   footer {
     z-index: 50;
